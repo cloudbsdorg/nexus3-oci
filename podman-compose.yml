@@ -1,0 +1,13 @@
+#
+# Use this to easily deploy this image with podman-compose
+#
+services:
+  nexus:
+    image: cloudbsd/nexus3:14.3
+    volumes:
+      - "nexus-data:/nexus-data"
+    ports:
+      - "8081:8081"
+volumes:
+  nexus-data: {
+  }
