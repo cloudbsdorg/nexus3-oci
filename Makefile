@@ -20,3 +20,9 @@ run:
 
 console:
 	podman run  -it localhost/$(IMG_TAG) /bin/sh
+
+compose:
+	podman-compose up
+
+
+# podman exec -it nexus3-oci_nexus_1  cat /usr/local/sonatype-work/nexus3/admin.password

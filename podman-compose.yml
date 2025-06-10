@@ -3,9 +3,9 @@
 #
 services:
   nexus:
-    image: cloudbsd/nexus3:14.3
+    image: localhost/cloudbsd/nexus3:FreeBSD-14.3-3.80.0-06
     volumes:
-      - "nexus-data:/nexus-data"
+      - "nexus-data:/usr/local/sonatype-work/nexus3"
     ports:
       - "8081:8081"
 volumes:

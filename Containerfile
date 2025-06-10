@@ -7,7 +7,7 @@ RUN sed -EI -e s/quarterly/latest/ /etc/pkg/FreeBSD.conf
 RUN env ASSUME_ALWAYS_YES=yes IGNORE_OS_VERSION=yes pkg bootstrap -r FreeBSD
 RUN env ASSUME_ALWAYS_YES=yes IGNORE_OS_VERSION=yes pkg update
 RUN env ASSUME_ALWAYS_YES=yes IGNORE_OS_VERSION=yes pkg upgrade -y
-RUN env ASSUME_ALWAYS_YES=yes IGNORE_OS_VERSION=yes pkg install -y FreeBSD-utilities FreeBSD-openssl openjdk17 bash zsh
+RUN env ASSUME_ALWAYS_YES=yes IGNORE_OS_VERSION=yes pkg install -y FreeBSD-utilities openjdk17 zsh
 
 # Download and place the Nexus 3 Application
 RUN fetch https://download.sonatype.com/nexus/3/nexus-3.80.0-06-linux-x86_64.tar.gz
