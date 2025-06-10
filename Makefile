@@ -16,7 +16,7 @@ clean:
 	podman image prune -af
 
 run:
-	podman run localhost/$(IMG_TAG)
+	podman run -it -p 8081:8081 localhost/$(IMG_TAG)
 
 console:
-	podman run  -it $(IMG_TAG) /bin/sh
+	podman run  -it localhost/$(IMG_TAG) /bin/sh
