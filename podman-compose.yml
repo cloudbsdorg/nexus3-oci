@@ -2,12 +2,26 @@
 # Use this to easily deploy this image with podman-compose
 #
 services:
-  nexus:
-    image: localhost/cloudbsd/nexus3:FreeBSD-14.3-3.80.0-06
+  nexus-latest:
+    restart: always
+    image: docker.io/cloudbsd/nexus3:latest
     volumes:
-      - "nexus-data:/usr/local/sonatype-work/nexus3"
+      - "./nexus-data-latest:/usr/local/sonatype-work/nexus3"
     ports:
       - "8081:8081"
-volumes:
-  nexus-data: {
-  }
+    dns:
+      - 8.8.8.8
+#  nexus-current:
+#    restart: always
+#    image: docker.io/cloudbsd/nexus3:FreeBSD-14.3-3.80.0-06
+#    volumes:
+#      - "./nexus-data-current:/usr/local/sonatype-work/nexus3"
+#    ports:
+#      - "8082:8081"
+#  nexus-15.snap:
+#    restart: always
+#    image: docker.io/cloudbsd/nexus3:FreeBSD-15.3-3.80.0-06
+#    volumes:
+#      - "./nexus-data-15.snap:/usr/local/sonatype-work/nexus3"
+#    ports:
+#      - "8083:8081"

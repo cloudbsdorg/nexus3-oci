@@ -1,6 +1,6 @@
 # Containerfile
 
-FROM ghcr.io/freebsd/freebsd-runtime:14.3
+FROM ghcr.io/freebsd/freebsd-runtime:15.snap
 
 #
 # Mimic Sonatype image properties , arguments , and environment
